@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		664FE1EA19E6836B0013005F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE1E919E6836B0013005F /* main.m */; };
 		664FE1ED19E6836B0013005F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE1EC19E6836B0013005F /* AppDelegate.m */; };
-		664FE1F019E6836B0013005F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE1EF19E6836B0013005F /* ViewController.m */; };
+		664FE1F019E6836B0013005F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE1EF19E6836B0013005F /* MapViewController.m */; };
 		664FE1F319E6836B0013005F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664FE1F119E6836B0013005F /* Main.storyboard */; };
 		664FE1F519E6836B0013005F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664FE1F419E6836B0013005F /* Images.xcassets */; };
 		664FE1F819E6836B0013005F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664FE1F619E6836B0013005F /* LaunchScreen.xib */; };
 		664FE20419E6836B0013005F /* SplaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE20319E6836B0013005F /* SplaceTests.m */; };
+		664FE20E19E69B320013005F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664FE20D19E69B320013005F /* MapKit.framework */; };
+		664FE21019E6AFE40013005F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664FE20F19E6AFE40013005F /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,16 @@
 		664FE1E919E6836B0013005F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		664FE1EB19E6836B0013005F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		664FE1EC19E6836B0013005F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		664FE1EE19E6836B0013005F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		664FE1EF19E6836B0013005F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		664FE1EE19E6836B0013005F /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		664FE1EF19E6836B0013005F /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		664FE1F219E6836B0013005F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		664FE1F419E6836B0013005F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		664FE1F719E6836B0013005F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		664FE1FD19E6836B0013005F /* SplaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		664FE20219E6836B0013005F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		664FE20319E6836B0013005F /* SplaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplaceTests.m; sourceTree = "<group>"; };
+		664FE20D19E69B320013005F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		664FE20F19E6AFE40013005F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664FE21019E6AFE40013005F /* CoreLocation.framework in Frameworks */,
+				664FE20E19E69B320013005F /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,8 @@
 		664FE1DB19E6836B0013005F = {
 			isa = PBXGroup;
 			children = (
+				664FE20F19E6AFE40013005F /* CoreLocation.framework */,
+				664FE20D19E69B320013005F /* MapKit.framework */,
 				664FE1E619E6836B0013005F /* Splace */,
 				664FE20019E6836B0013005F /* SplaceTests */,
 				664FE1E519E6836B0013005F /* Products */,
@@ -83,8 +91,8 @@
 			children = (
 				664FE1EB19E6836B0013005F /* AppDelegate.h */,
 				664FE1EC19E6836B0013005F /* AppDelegate.m */,
-				664FE1EE19E6836B0013005F /* ViewController.h */,
-				664FE1EF19E6836B0013005F /* ViewController.m */,
+				664FE1EE19E6836B0013005F /* MapViewController.h */,
+				664FE1EF19E6836B0013005F /* MapViewController.m */,
 				664FE1F119E6836B0013005F /* Main.storyboard */,
 				664FE1F419E6836B0013005F /* Images.xcassets */,
 				664FE1F619E6836B0013005F /* LaunchScreen.xib */,
@@ -168,6 +176,11 @@
 				TargetAttributes = {
 					664FE1E319E6836B0013005F = {
 						CreatedOnToolsVersion = 6.0.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					664FE1FC19E6836B0013005F = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -219,7 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				664FE1F019E6836B0013005F /* ViewController.m in Sources */,
+				664FE1F019E6836B0013005F /* MapViewController.m in Sources */,
 				664FE1ED19E6836B0013005F /* AppDelegate.m in Sources */,
 				664FE1EA19E6836B0013005F /* main.m in Sources */,
 			);
@@ -412,6 +425,7 @@
 				664FE20919E6836B0013005F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		664FE20A19E6836B0013005F /* Build configuration list for PBXNativeTarget "SplaceTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +434,7 @@
 				664FE20C19E6836B0013005F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
