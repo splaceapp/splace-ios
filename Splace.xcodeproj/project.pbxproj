@@ -16,6 +16,8 @@
 		664FE20419E6836B0013005F /* SplaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE20319E6836B0013005F /* SplaceTests.m */; };
 		664FE20E19E69B320013005F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664FE20D19E69B320013005F /* MapKit.framework */; };
 		664FE21019E6AFE40013005F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664FE20F19E6AFE40013005F /* CoreLocation.framework */; };
+		664FE21319E6D1830013005F /* StartAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE21219E6D1830013005F /* StartAnnotation.m */; };
+		664FE21619E6F4D10013005F /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE21519E6F4D10013005F /* ListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,10 @@
 		664FE20319E6836B0013005F /* SplaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplaceTests.m; sourceTree = "<group>"; };
 		664FE20D19E69B320013005F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		664FE20F19E6AFE40013005F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		664FE21119E6D1830013005F /* StartAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartAnnotation.h; sourceTree = "<group>"; };
+		664FE21219E6D1830013005F /* StartAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartAnnotation.m; sourceTree = "<group>"; };
+		664FE21419E6F4D10013005F /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		664FE21519E6F4D10013005F /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,10 @@
 				664FE1F419E6836B0013005F /* Images.xcassets */,
 				664FE1F619E6836B0013005F /* LaunchScreen.xib */,
 				664FE1E719E6836B0013005F /* Supporting Files */,
+				664FE21119E6D1830013005F /* StartAnnotation.h */,
+				664FE21219E6D1830013005F /* StartAnnotation.m */,
+				664FE21419E6F4D10013005F /* ListViewController.h */,
+				664FE21519E6F4D10013005F /* ListViewController.m */,
 			);
 			path = Splace;
 			sourceTree = "<group>";
@@ -232,7 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664FE21619E6F4D10013005F /* ListViewController.m in Sources */,
 				664FE1F019E6836B0013005F /* MapViewController.m in Sources */,
+				664FE21319E6D1830013005F /* StartAnnotation.m in Sources */,
 				664FE1ED19E6836B0013005F /* AppDelegate.m in Sources */,
 				664FE1EA19E6836B0013005F /* main.m in Sources */,
 			);

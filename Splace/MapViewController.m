@@ -9,12 +9,14 @@
 #import "MapViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "StartAnnotation.h"
 
 @interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView* mapView;
 
 @property (strong) CLLocationManager* locationManager;
+@property (strong) StartAnnotation* dropPin;
 
 @end
 
@@ -24,6 +26,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self performSelector:@selector(startStandardUpdates) withObject:self afterDelay:1.0];
+    [self addLongGesture];
+}
+
+- (void)addLongGesture
+{
+    UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
+    [self.mapView addGestureRecognizer:longPressGesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,15 +40,63 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
-//{
-//    
-//}
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if ([annotation class] == [MKUserLocation class])
+    {
+        return nil;
+    }
+    NSLog(@"%@", annotation);
+    MKAnnotationView* aView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                           reuseIdentifier:@"MyCustomAnnotation"];
+    aView.image = [UIImage imageNamed:@"SplacePin"];
+    aView.centerOffset = CGPointMake(10, -20);
+    return aView;
+}
 
-//- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
-//{
-//    NSLog(@"%@", views);
-//}
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+    MKAnnotationView *aV;
+    
+    for (aV in views) {
+        
+        // Don't pin drop if annotation is user location
+        if ([aV.annotation isKindOfClass:[MKUserLocation class]]) {
+            continue;
+        }
+        
+        // Check if current annotation is inside visible map rect, else go to next one
+        MKMapPoint point =  MKMapPointForCoordinate(aV.annotation.coordinate);
+        if (!MKMapRectContainsPoint(self.mapView.visibleMapRect, point)) {
+            continue;
+        }
+        
+        CGRect endFrame = aV.frame;
+        
+        // Move annotation out of view
+        aV.frame = CGRectMake(aV.frame.origin.x, aV.frame.origin.y - self.view.frame.size.height, aV.frame.size.width, aV.frame.size.height);
+        
+        // Animate drop
+        [UIView animateWithDuration:0.5 delay:0.04*[views indexOfObject:aV] options: UIViewAnimationOptionCurveLinear animations:^{
+            
+            aV.frame = endFrame;
+            
+            // Animate squash
+        }completion:^(BOOL finished){
+            if (finished) {
+                [UIView animateWithDuration:0.05 animations:^{
+                    aV.transform = CGAffineTransformMakeScale(1.0, 0.8);
+                    
+                }completion:^(BOOL finished){
+                    if (finished) {
+                        [UIView animateWithDuration:0.1 animations:^{
+                            aV.transform = CGAffineTransformIdentity;
+                        }];
+                    }
+                }];
+            }
+        }];
+    }
+}
 
 - (void)startStandardUpdates
 {
@@ -78,6 +135,25 @@
     }
 }
 
-//- (void)
+-(void)handleLongPressGesture:(UIGestureRecognizer*)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded)
+    {
+        [self.mapView removeGestureRecognizer:sender];
+    }
+    else
+    {
+        [self.mapView removeAnnotation:self.dropPin];
+        // Here we get the CGPoint for the touch and convert it to latitude and longitude coordinates to display on the map
+        CGPoint point = [sender locationInView:self.mapView];
+        CLLocationCoordinate2D locCoord = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
+        // Then all you have to do is create the annotation and add it to the map
+        self.dropPin = [[StartAnnotation  alloc] init];
+        self.dropPin.title = @"Start";
+        self.dropPin.subtitle = @"Bomj";
+        self.dropPin.coordinate = locCoord;
+        [self.mapView addAnnotation:self.dropPin];
+    }
+}
 
 @end
