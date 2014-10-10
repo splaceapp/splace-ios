@@ -7,12 +7,14 @@
 //
 
 #import "DetailsProjectViewController.h"
+#import "ASSplaceTransmitter.h"
 
 @interface DetailsProjectViewController ()
 
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *donateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
@@ -69,13 +71,22 @@
     self.imageView.image = image;
     self.typeLabel.text = self.projectTitle;
     
-    self.priceLabel.text = [NSString stringWithFormat:@"%u out of %u UAH collected!", self.donatedMoney, price];
-//    self.slider.maximumValue = (float)price;
+    self.priceLabel.text = [NSString stringWithFormat:@"%u out of %u UAH collected", self.donatedMoney, price];
+    self.nameLabel.text = self.projectTitle;
 }
 
 - (IBAction)sliderDidUpdateValue:(UISlider *)sender
 {
     self.donateLabel.text = [NSString stringWithFormat:@"%.0f UAH", sender.value];
+}
+
+- (IBAction)donateButton:(id)sender
+{
+    [[ASSplaceTransmitter sharedTransmitter] offlaneAddMoney:(int)self.slider.value forId:self.idString];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Thanks for your contribution!" message:nil delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+    [alert show];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
 }
 
 @end

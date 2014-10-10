@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface ListViewController : UIViewController
+
+@property (assign, nonatomic) CLLocationCoordinate2D coordinates;
 
 @end

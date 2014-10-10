@@ -30,6 +30,7 @@
 {
     StartProjectViewController *startProjectViewController = segue.destinationViewController;
     startProjectViewController.projectType = sender.tag;
+    startProjectViewController.coordinates = self.coordinates;
 }
 //
 //- (IBAction)benchButton:(id)sender

@@ -7,6 +7,7 @@
 //
 
 #import "StartProjectViewController.h"
+#import "ASSplaceTransmitter.h"
 
 @interface StartProjectViewController ()
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *maxLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *donateLabel;
+@property (copy, nonatomic) NSString *projTitle;
 
 @end
 
@@ -80,6 +82,19 @@
 - (IBAction)sliderDidUpdateValue:(UISlider *)sender
 {
     self.donateLabel.text = [NSString stringWithFormat:@"%.0f UAH", sender.value];
+}
+
+- (IBAction)startProjectButton:(id)sender
+{
+    [[ASSplaceTransmitter sharedTransmitter] offlaneSetMarkerWithName:self.projTitle coordinates:self.coordinates type:self.projectType money:(NSUInteger)self.slider.value];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (BOOL)textFieldShouldReturn: (UITextField *) textField
+{
+    [textField resignFirstResponder];
+    self.projTitle = [textField text];
+    return YES;
 }
 
 /*

@@ -10,6 +10,13 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "StartAnnotation.h"
+#import "ListViewController.h"
+#import "ASSplaceTransmitter.h"
+#import "ProjAnnotation.h"
+#import "DetailsProjectViewController.h"
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 
 @interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -17,15 +24,25 @@
 
 @property (strong) CLLocationManager* locationManager;
 @property (strong) StartAnnotation* dropPin;
+@property (strong) NSArray* markers;
 
 @end
 
 @implementation MapViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self performSelector:@selector(startStandardUpdates) withObject:self afterDelay:1.0];
+    [self addLongGesture];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.mapView removeAnnotations:[self.mapView annotations]];
+    self.markers = [[ASSplaceTransmitter sharedTransmitter] offlaneGetMarkers];
+    [self anotateMap];
     [self addLongGesture];
 }
 
@@ -46,10 +63,25 @@
     {
         return nil;
     }
-    NSLog(@"%@", annotation);
+
     MKAnnotationView* aView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                            reuseIdentifier:@"MyCustomAnnotation"];
-    aView.image = [UIImage imageNamed:@"SplacePin"];
+    
+    
+    UIButton *button = nil;
+    if ([annotation isMemberOfClass: [StartAnnotation class]])
+    {
+        button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+        aView.image = [UIImage imageNamed:@"SplacePin"];
+    }
+    else
+    {
+        button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        aView.image = [UIImage imageNamed:@"SplacePinBlue"];
+    }
+    button.tintColor = [UIColor colorWithRed:198.0/255.0 green:80.0/255.0 blue:42.0/255.0 alpha:1.0];
+    aView.rightCalloutAccessoryView = button;
+    aView.canShowCallout = YES;
     aView.centerOffset = CGPointMake(10, -20);
     return aView;
 }
@@ -57,7 +89,8 @@
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
     MKAnnotationView *aV;
     
-    for (aV in views) {
+    for (aV in views)
+    {
         
         // Don't pin drop if annotation is user location
         if ([aV.annotation isKindOfClass:[MKUserLocation class]]) {
@@ -149,10 +182,68 @@
         CLLocationCoordinate2D locCoord = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
         // Then all you have to do is create the annotation and add it to the map
         self.dropPin = [[StartAnnotation  alloc] init];
-        self.dropPin.title = @"Start";
-        self.dropPin.subtitle = @"Bomj";
+        self.dropPin.title = @"Need something here?";
+        self.dropPin.subtitle = @"Start crowfunding project";
         self.dropPin.coordinate = locCoord;
         [self.mapView addAnnotation:self.dropPin];
+    }
+}
+
+- (void)anotateMap
+{
+    for (NSDictionary *dict in self.markers)
+    {
+        CLLocationCoordinate2D locCoord = CLLocationCoordinate2DMake([dict[@"latitude"] floatValue], [dict[@"longtitude"] floatValue]);
+        ProjAnnotation *projAnnotation = [ProjAnnotation new];
+        projAnnotation.title = dict[@"title"];
+        projAnnotation.type = [dict[@"type"] integerValue];
+        projAnnotation.money = [dict[@"moneyDonated"] integerValue];
+        projAnnotation.idString = dict[@"id"];
+        projAnnotation.coordinate = locCoord;
+
+        NSString *name = nil;
+        switch (projAnnotation.type)
+        {
+            case 1:
+                name = @"Bench";
+                break;
+            case 2:
+                name = @"Trash Can";
+                break;
+            case 3:
+                name = @"Bollard";
+                break;
+            case 4:
+                name = @"Bicyle Parking";
+                break;
+            case 5:
+                name = @"Grass Lawn";
+                break;
+            default:
+                break;
+        }
+        projAnnotation.subtitle = name;
+        [self.mapView addAnnotation:projAnnotation];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    UIButton* button = (UIButton *)control;
+    if (button.buttonType == UIButtonTypeContactAdd)
+    {
+        ListViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+        controller.coordinates = view.annotation.coordinate;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else
+    {
+        DetailsProjectViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+        controller.projectType = [(ProjAnnotation*)view.annotation type];
+        controller.projectTitle = [(ProjAnnotation*)view.annotation title];
+        controller.donatedMoney = [(ProjAnnotation*)view.annotation money];
+        controller.idString = [(ProjAnnotation*)view.annotation idString];
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 

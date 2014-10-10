@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface StartProjectViewController : UIViewController
 
 @property (assign, nonatomic) NSUInteger projectType;
+@property (assign, nonatomic) CLLocationCoordinate2D coordinates;
 
 @end

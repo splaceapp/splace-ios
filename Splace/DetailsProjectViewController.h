@@ -13,5 +13,6 @@
 @property (assign, nonatomic) NSUInteger projectType;
 @property (assign, nonatomic) NSUInteger donatedMoney;
 @property (assign, nonatomic) NSString *projectTitle;
+@property (copy, nonatomic) NSString *idString;
 
 @end

@@ -29,6 +29,8 @@
     [[UISlider appearance] setMinimumTrackTintColor: orangeColor];
     [[UISlider appearance] setMaximumTrackTintColor: blueColor];
     [[UITextField appearance] setTextColor:orangeColor];
+    
+    [[UIButton appearanceWhenContainedIn:[UIAlertView class], nil] setTintColor:orangeColor];
 
     return YES;
 }

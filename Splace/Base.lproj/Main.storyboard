@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xv-Tf-vJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-509.86666666666667" y="253.70666666666668"/>
+            <point key="canvasLocation" x="-605" y="253"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="o9K-1l-1mv">
@@ -47,20 +47,7 @@
                             <constraint firstItem="6eQ-PO-J8r" firstAttribute="leading" secondItem="6Zd-1p-6ME" secondAttribute="leading" id="Tbh-ws-WK7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9NI-Uz-odS">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="sc3-av-5zG">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kcD-wp-6x3">
-                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="OXE-tM-GI1" kind="push" id="61m-Vl-VTp"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="9NI-Uz-odS"/>
                     <connections>
                         <outlet property="mapView" destination="6eQ-PO-J8r" id="IM1-se-AVz"/>
                     </connections>
@@ -72,7 +59,7 @@
         <!--List View Controller-->
         <scene sceneID="nvN-iK-SOP">
             <objects>
-                <viewController id="OXE-tM-GI1" customClass="ListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" id="OXE-tM-GI1" customClass="ListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Ko-5Y-RI4"/>
                         <viewControllerLayoutGuide type="bottom" id="K9u-xJ-f5i"/>
@@ -173,7 +160,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give it a name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="20u-qo-5fu">
                                 <rect key="frame" x="16" y="238" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ni1-td-fmX" id="iuW-R0-x59"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-4R-eeW">
                                 <rect key="frame" x="0.0" y="64" width="320" height="130"/>
@@ -185,6 +175,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hi6-Mx-lu1" customClass="UIOrangeRoundButton">
                                 <rect key="frame" x="16" y="493" width="288" height="42"/>
                                 <state key="normal" title="Start Project"/>
+                                <connections>
+                                    <action selector="startProjectButton:" destination="ni1-td-fmX" eventType="touchUpInside" id="8CD-Ap-lT9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="of7-SQ-OYa">
                                 <rect key="frame" x="16" y="164" width="288" height="21"/>
@@ -240,7 +233,7 @@
         <!--Details Project View Controller-->
         <scene sceneID="NZU-8i-jH4">
             <objects>
-                <viewController id="o7e-ge-liO" customClass="DetailsProjectViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="o7e-ge-liO" customClass="DetailsProjectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gcd-aI-taK"/>
                         <viewControllerLayoutGuide type="bottom" id="xXa-2T-6yr"/>
@@ -256,9 +249,18 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="130"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKm-8r-GFo">
+                                <rect key="frame" x="16" y="161" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8x-Bx-T3A" customClass="UIOrangeRoundButton">
                                 <rect key="frame" x="174" y="488" width="130" height="42"/>
                                 <state key="normal" title="Donate"/>
+                                <connections>
+                                    <action selector="donateButton:" destination="o7e-ge-liO" eventType="touchUpInside" id="HNh-Db-AgO"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50 UAH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9c-JS-IbM">
                                 <rect key="frame" x="114" y="365" width="92" height="24"/>
@@ -284,20 +286,20 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaH-fR-oOA">
-                                <rect key="frame" x="16" y="202" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="870 out of 100 left to go!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJW-23-UGo">
-                                <rect key="frame" x="16" y="273" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="16" y="212" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qld-uG-CRC" customClass="UIBlueRoundButton">
                                 <rect key="frame" x="13" y="489" width="130" height="42"/>
                                 <state key="normal" title="Vote"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make your donation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPc-Db-G1O">
+                                <rect key="frame" x="13" y="327" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -305,7 +307,7 @@
                     <connections>
                         <outlet property="donateLabel" destination="h9c-JS-IbM" id="tx0-nA-A7z"/>
                         <outlet property="imageView" destination="cfn-Pi-YCV" id="Y03-vb-Pra"/>
-                        <outlet property="maxLabel" destination="fGg-hb-RNf" id="t6L-hf-Qz6"/>
+                        <outlet property="nameLabel" destination="FKm-8r-GFo" id="c7B-CZ-odH"/>
                         <outlet property="priceLabel" destination="HaH-fR-oOA" id="ymZ-ew-I4A"/>
                         <outlet property="slider" destination="dSR-fL-JfT" id="LVz-iN-ZM4"/>
                     </connections>
