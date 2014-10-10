@@ -99,67 +99,69 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nTu-4q-jE2">
                                 <rect key="frame" x="160" y="400" width="160" height="168"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1n-sf-P3o">
-                                <rect key="frame" x="57" y="194" width="46" height="30"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1n-sf-P3o">
+                                <rect key="frame" x="56" y="181" width="48" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Bench">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="benchButton:" destination="OXE-tM-GI1" eventType="touchUpInside" id="bUh-KT-PB0"/>
+                                    <segue destination="ni1-td-fmX" kind="push" id="BMM-bV-tKi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdZ-Mp-5LI">
-                                <rect key="frame" x="187" y="194" width="106" height="30"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdZ-Mp-5LI">
+                                <rect key="frame" x="182" y="181" width="116" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Bicycle Parking">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="parkButton:" destination="OXE-tM-GI1" eventType="touchUpInside" id="XZX-Eg-lsv"/>
+                                    <segue destination="ni1-td-fmX" kind="push" id="MMw-Df-wTc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bs-0w-m4Q">
-                                <rect key="frame" x="48" y="355" width="64" height="30"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bs-0w-m4Q">
+                                <rect key="frame" x="45" y="351" width="70" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Trash Bin">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="trashButton:" destination="OXE-tM-GI1" eventType="touchUpInside" id="zeN-4r-Z2o"/>
+                                    <segue destination="ni1-td-fmX" kind="push" id="nPI-NB-pyK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRQ-Wf-zFQ">
-                                <rect key="frame" x="216" y="355" width="49" height="30"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRQ-Wf-zFQ">
+                                <rect key="frame" x="214" y="351" width="53" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Bollard">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="bollardButton:" destination="OXE-tM-GI1" eventType="touchUpInside" id="n3a-Iy-Z2R"/>
+                                    <segue destination="ni1-td-fmX" kind="push" id="VQE-TE-0e7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5i-19-kbI">
-                                <rect key="frame" x="39" y="518" width="82" height="30"/>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5i-19-kbI">
+                                <rect key="frame" x="36" y="516" width="88" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Grass Lawn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="lawnButton:" destination="OXE-tM-GI1" eventType="touchUpInside" id="na4-xJ-meq"/>
+                                    <segue destination="ni1-td-fmX" kind="push" id="D8d-j3-6Eq"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Ix-Z8-CZZ"/>
-                    <connections>
-                        <segue destination="ni1-td-fmX" kind="push" id="u5K-nX-iLj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avF-Au-6vq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="265" y="253"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Project View Controller-->
         <scene sceneID="NC2-Yw-MRn">
             <objects>
-                <viewController id="ni1-td-fmX" sceneMemberID="viewController">
+                <viewController id="ni1-td-fmX" customClass="StartProjectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FBS-0F-5Xd"/>
                         <viewControllerLayoutGuide type="bottom" id="0ZP-PZ-ip9"/>
@@ -167,13 +169,150 @@
                     <view key="view" contentMode="scaleToFill" id="ErV-3g-cDs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give it a name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="20u-qo-5fu">
+                                <rect key="frame" x="16" y="238" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-4R-eeW">
+                                <rect key="frame" x="0.0" y="64" width="320" height="130"/>
+                            </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ywz-ls-KHL" customClass="UIBlackView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="130"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hi6-Mx-lu1" customClass="UIOrangeRoundButton">
+                                <rect key="frame" x="16" y="493" width="288" height="42"/>
+                                <state key="normal" title="Start Project"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="of7-SQ-OYa">
+                                <rect key="frame" x="16" y="164" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make first donation!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRG-Sz-afU">
+                                <rect key="frame" x="16" y="315" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50 UAH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBC-wr-6RF">
+                                <rect key="frame" x="114" y="367" width="92" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frR-NN-SZK">
+                                <rect key="frame" x="13" y="402" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSW-Ds-5Nb">
+                                <rect key="frame" x="274" y="402" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="t0u-eA-vIY">
+                                <rect key="frame" x="14" y="418" width="292" height="31"/>
+                                <connections>
+                                    <action selector="sliderDidUpdateValue:" destination="ni1-td-fmX" eventType="valueChanged" id="gM3-98-7ZV"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wcw-yd-3Hl"/>
+                    <connections>
+                        <outlet property="donateLabel" destination="eBC-wr-6RF" id="ttM-K4-2TS"/>
+                        <outlet property="imageView" destination="eD1-4R-eeW" id="BYV-xi-TPu"/>
+                        <outlet property="maxLabel" destination="fSW-Ds-5Nb" id="esu-q8-5gQ"/>
+                        <outlet property="priceLabel" destination="of7-SQ-OYa" id="5bW-jL-by3"/>
+                        <outlet property="slider" destination="t0u-eA-vIY" id="PUK-iS-mh6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAe-FL-l3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="682" y="253"/>
+        </scene>
+        <!--Details Project View Controller-->
+        <scene sceneID="NZU-8i-jH4">
+            <objects>
+                <viewController id="o7e-ge-liO" customClass="DetailsProjectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gcd-aI-taK"/>
+                        <viewControllerLayoutGuide type="bottom" id="xXa-2T-6yr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GCI-a3-IrS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-Pi-YCV">
+                                <rect key="frame" x="0.0" y="64" width="320" height="130"/>
+                            </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="khs-f1-th7" customClass="UIBlackView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="130"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8x-Bx-T3A" customClass="UIOrangeRoundButton">
+                                <rect key="frame" x="174" y="488" width="130" height="42"/>
+                                <state key="normal" title="Donate"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50 UAH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9c-JS-IbM">
+                                <rect key="frame" x="114" y="365" width="92" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvd-3B-UcL">
+                                <rect key="frame" x="13" y="401" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="300" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGg-hb-RNf">
+                                <rect key="frame" x="274" y="401" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="dSR-fL-JfT">
+                                <rect key="frame" x="14" y="416" width="292" height="31"/>
+                                <connections>
+                                    <action selector="sliderDidUpdateValue:" destination="o7e-ge-liO" eventType="valueChanged" id="jSR-NU-22b"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaH-fR-oOA">
+                                <rect key="frame" x="16" y="202" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="870 out of 100 left to go!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJW-23-UGo">
+                                <rect key="frame" x="16" y="273" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qld-uG-CRC" customClass="UIBlueRoundButton">
+                                <rect key="frame" x="13" y="489" width="130" height="42"/>
+                                <state key="normal" title="Vote"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tMF-ol-gs8"/>
+                    <connections>
+                        <outlet property="donateLabel" destination="h9c-JS-IbM" id="tx0-nA-A7z"/>
+                        <outlet property="imageView" destination="cfn-Pi-YCV" id="Y03-vb-Pra"/>
+                        <outlet property="maxLabel" destination="fGg-hb-RNf" id="t6L-hf-Qz6"/>
+                        <outlet property="priceLabel" destination="HaH-fR-oOA" id="ymZ-ew-I4A"/>
+                        <outlet property="slider" destination="dSR-fL-JfT" id="LVz-iN-ZM4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ob-VZ-I9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-133" y="927"/>
         </scene>
     </scenes>
     <resources>
@@ -188,4 +327,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="MMw-Df-wTc"/>
+    </inferredMetricsTieBreakers>
 </document>

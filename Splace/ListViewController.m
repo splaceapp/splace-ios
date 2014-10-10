@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "StartProjectViewController.h"
 
 @interface ListViewController ()
 
@@ -24,39 +25,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)benchButton:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIControl *)sender
 {
-    
+    StartProjectViewController *startProjectViewController = segue.destinationViewController;
+    startProjectViewController.projectType = sender.tag;
 }
-
-- (IBAction)parkButton:(id)sender
-{
-    
-}
-
-- (IBAction)bollardButton:(id)sender
-{
-    
-}
-
-- (IBAction)trashButton:(id)sender
-{
-    
-}
-
-- (IBAction)lawnButton:(id)sender
-{
-    
-}
+//
+//- (IBAction)benchButton:(id)sender
+//{
+//    
+//}
+//
+//- (IBAction)parkButton:(id)sender
+//{
+//    
+//}
+//
+//- (IBAction)bollardButton:(id)sender
+//{
+//    
+//}
+//
+//- (IBAction)trashButton:(id)sender
+//{
+//    
+//}
+//
+//- (IBAction)lawnButton:(id)sender
+//{
+//    
+//}
 
 @end

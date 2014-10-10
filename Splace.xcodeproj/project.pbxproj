@@ -18,6 +18,11 @@
 		664FE21019E6AFE40013005F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664FE20F19E6AFE40013005F /* CoreLocation.framework */; };
 		664FE21319E6D1830013005F /* StartAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE21219E6D1830013005F /* StartAnnotation.m */; };
 		664FE21619E6F4D10013005F /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE21519E6F4D10013005F /* ListViewController.m */; };
+		664FE21919E6F8C70013005F /* StartProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664FE21819E6F8C70013005F /* StartProjectViewController.m */; };
+		669A9B8219E7595B00BC9BA3 /* UIBlackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A9B8119E7595B00BC9BA3 /* UIBlackView.m */; };
+		669A9B8519E765DE00BC9BA3 /* UIOrangeRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A9B8419E765DE00BC9BA3 /* UIOrangeRoundButton.m */; };
+		669A9B8819E7A6DA00BC9BA3 /* DetailsProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A9B8719E7A6DA00BC9BA3 /* DetailsProjectViewController.m */; };
+		669A9B8B19E7A92000BC9BA3 /* UIBlueRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 669A9B8A19E7A92000BC9BA3 /* UIBlueRoundButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,16 @@
 		664FE21219E6D1830013005F /* StartAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartAnnotation.m; sourceTree = "<group>"; };
 		664FE21419E6F4D10013005F /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		664FE21519E6F4D10013005F /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		664FE21719E6F8C70013005F /* StartProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartProjectViewController.h; sourceTree = "<group>"; };
+		664FE21819E6F8C70013005F /* StartProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartProjectViewController.m; sourceTree = "<group>"; };
+		669A9B8019E7595B00BC9BA3 /* UIBlackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBlackView.h; sourceTree = "<group>"; };
+		669A9B8119E7595B00BC9BA3 /* UIBlackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBlackView.m; sourceTree = "<group>"; };
+		669A9B8319E765DE00BC9BA3 /* UIOrangeRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIOrangeRoundButton.h; sourceTree = "<group>"; };
+		669A9B8419E765DE00BC9BA3 /* UIOrangeRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIOrangeRoundButton.m; sourceTree = "<group>"; };
+		669A9B8619E7A6DA00BC9BA3 /* DetailsProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsProjectViewController.h; sourceTree = "<group>"; };
+		669A9B8719E7A6DA00BC9BA3 /* DetailsProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsProjectViewController.m; sourceTree = "<group>"; };
+		669A9B8919E7A92000BC9BA3 /* UIBlueRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBlueRoundButton.h; sourceTree = "<group>"; };
+		669A9B8A19E7A92000BC9BA3 /* UIBlueRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBlueRoundButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +122,16 @@
 				664FE21219E6D1830013005F /* StartAnnotation.m */,
 				664FE21419E6F4D10013005F /* ListViewController.h */,
 				664FE21519E6F4D10013005F /* ListViewController.m */,
+				664FE21719E6F8C70013005F /* StartProjectViewController.h */,
+				664FE21819E6F8C70013005F /* StartProjectViewController.m */,
+				669A9B8619E7A6DA00BC9BA3 /* DetailsProjectViewController.h */,
+				669A9B8719E7A6DA00BC9BA3 /* DetailsProjectViewController.m */,
+				669A9B8019E7595B00BC9BA3 /* UIBlackView.h */,
+				669A9B8119E7595B00BC9BA3 /* UIBlackView.m */,
+				669A9B8319E765DE00BC9BA3 /* UIOrangeRoundButton.h */,
+				669A9B8419E765DE00BC9BA3 /* UIOrangeRoundButton.m */,
+				669A9B8919E7A92000BC9BA3 /* UIBlueRoundButton.h */,
+				669A9B8A19E7A92000BC9BA3 /* UIBlueRoundButton.m */,
 			);
 			path = Splace;
 			sourceTree = "<group>";
@@ -243,10 +268,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				664FE21619E6F4D10013005F /* ListViewController.m in Sources */,
+				669A9B8219E7595B00BC9BA3 /* UIBlackView.m in Sources */,
 				664FE1F019E6836B0013005F /* MapViewController.m in Sources */,
 				664FE21319E6D1830013005F /* StartAnnotation.m in Sources */,
+				669A9B8B19E7A92000BC9BA3 /* UIBlueRoundButton.m in Sources */,
 				664FE1ED19E6836B0013005F /* AppDelegate.m in Sources */,
 				664FE1EA19E6836B0013005F /* main.m in Sources */,
+				669A9B8519E765DE00BC9BA3 /* UIOrangeRoundButton.m in Sources */,
+				669A9B8819E7A6DA00BC9BA3 /* DetailsProjectViewController.m in Sources */,
+				664FE21919E6F8C70013005F /* StartProjectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,11 +18,18 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    UIColor *blueColor = UIColorFromRGB(0x2C566C);
+    UIColor *orangeColor = [UIColor colorWithRed:198.0/255.0 green:80.0/255.0 blue:42.0/255.0 alpha:1.0];
+
     [[UIView appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarStyle: UIBarStyleBlack];
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x2C566C)];
+    [[UINavigationBar appearance] setBarTintColor:blueColor];
+    [[UISlider appearance] setMinimumTrackTintColor: orangeColor];
+    [[UISlider appearance] setMaximumTrackTintColor: blueColor];
+    [[UITextField appearance] setTextColor:orangeColor];
+
     return YES;
 }
 
