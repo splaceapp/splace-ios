@@ -78,6 +78,30 @@
     {
         button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         aView.image = [UIImage imageNamed:@"SplacePinBlue"];
+        UIImage *image = nil;
+        switch ([(ProjAnnotation*)annotation type])
+        {
+            case 1:
+                image = [UIImage imageNamed:@"benchIcon"];
+                break;
+            case 2:
+                image = [UIImage imageNamed:@"trashIcon"];
+                break;
+            case 3:
+                image = [UIImage imageNamed:@"bolIcon"];
+                break;
+            case 4:
+                image = [UIImage imageNamed:@"bikeIcon"];
+                break;
+            case 5:
+                image = [UIImage imageNamed:@"grassIcon"];
+                break;
+            default:
+                break;
+        }
+        UIImageView* imageView = [[UIImageView alloc] initWithImage:image];
+        [imageView setFrame:CGRectMake(0, 0, 40, 40)];
+        aView.leftCalloutAccessoryView = imageView;
     }
     button.tintColor = [UIColor colorWithRed:198.0/255.0 green:80.0/255.0 blue:42.0/255.0 alpha:1.0];
     aView.rightCalloutAccessoryView = button;
